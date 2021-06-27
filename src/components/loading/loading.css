@@ -1,0 +1,69 @@
+#loadingBox {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: black; 
+    /* 讓loadingBox蓋過首頁#App */
+    position: absolute;
+    z-index: 999;
+    /* 讓loading置中 */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+#loadingBox.hidden{
+    display: none;
+}
+    .loading { 
+        width: 10em; 
+        height: 10em;
+        display:grid; 
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.5em; 
+
+        transform: rotate(45deg);
+    }
+        .loading span { 
+        /* --name 是css中定義變量的方式   可以直接用 var(--name) 使用 */
+            background-color: var(--color); 
+
+            animation: blinking 2s var(--delay) ease-in-out infinite; 
+            animation-fill-mode: backwards;
+        } 
+        .loading span:nth-child(2n+2) { 
+            --color: #f13f84; 
+        } 
+        .loading span:nth-child(4n+3) { 
+            --color: #46b0ff;
+         } 
+         .loading span:nth-child(4n+1) {
+             --color: #44bb44; 
+        }
+        .loading span:nth-child(7) { 
+            --delay: 0s; 
+        } 
+        .loading span:nth-child(4n+4) {
+            --delay: 0.2s;
+        } 
+        .loading span:nth-child(4n+1) {
+            --delay: 0.4s; 
+        } 
+        .loading span:nth-child(4n+2) { 
+            --delay: 0.6s;
+        } 
+        .loading span:nth-child(3) {
+            --delay: 0.8s; 
+        }
+
+        @keyframes blinking {
+            /*旋轉一圈rotate(1turn)、縮放 scale 如果大於1就代表放大；如果小於1就代表縮小   */
+            0%, 20% { 
+                transform: rotate(0deg) scale(0); 
+            } 
+            40%, 80% {  
+                transform: rotate(1turn) scale(1); 
+            } 
+            100% { 
+                transform: rotate(2turn) scale(0); 
+            }
+        }

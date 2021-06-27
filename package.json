@@ -7,8 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "lax.js": "^2.0.3",
+    "swiper": "^6.7.1",
+    "vue": "^3.0.0",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-sticky-element": "^1.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
